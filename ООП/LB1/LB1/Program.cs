@@ -65,8 +65,62 @@ namespace LB1
                 Console.WriteLine(nullableVar.Value);
             else
                 Console.WriteLine("nullableVar = null"); //nullableVar.value - нельзя
+            
+            ShowTuple((2, 3));
+
+            var namedTuple = (Name: "Vasya", age: 20, city: "Minsk");
+
+            (string name, int age, string city) = namedTuple;
+            var (name2, age2, city2) = namedTuple;
+            (var name3, int age3, var city3) = namedTuple;
+            string name4;
+            int age4;
+            string city4;
+            (name4, age4, city4) = namedTuple;
+            (_, int onlyAge, _) = namedTuple;
 
 
+
+            Console.WriteLine($"Unchecked: {UncheckedFunc()}\n");
+           // Console.WriteLine($"Checked: { CheckedFunc()}\n"); ///////
+
+            using (Example ex1 = new Example(23))
+            {
+                Console.WriteLine($"ex1.state = {ex1.GetState()}\n");
+            }
+
+            void ShowTuple((int,int) tuple)
+            {
+                Console.WriteLine($"\nПервое поле кортежа: {tuple.Item1}\nВторое поле кортежа: {tuple.Item2}\n");
+            }
+            int UncheckedFunc()
+            {
+                int one = 1;
+                int a = Int32.MaxValue + one;
+                return a;
+            }
+            int CheckedFunc()
+            {
+                checked
+                {
+                    int one = 1;
+                    int a = Int32.MaxValue + one;
+                    return a;
+                } 
+            }
         }
+        
+    }
+    class Example : IDisposable
+    {
+        private readonly int _state;
+
+        public Example(int state)
+        {
+            _state = state;
+        }
+
+        public int GetState() => _state;
+        public void Dispose() { }
     }
 }

@@ -89,6 +89,8 @@ namespace LB1
                 Console.WriteLine($"ex1.state = {ex1.GetState()}\n");
             }
 
+           
+
             void ShowTuple((int,int) tuple)
             {
                 Console.WriteLine($"\nПервое поле кортежа: {tuple.Item1}\nВторое поле кортежа: {tuple.Item2}\n");
@@ -109,7 +111,8 @@ namespace LB1
                 } 
             }
         }
-        
+      
+           
     }
     class Example : IDisposable
     {

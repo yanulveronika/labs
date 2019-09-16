@@ -36,7 +36,7 @@ namespace LB1
             Console.WriteLine($"imyGroup = {imyGroup}, lmyGroup = {lmyGroup}, smyGroup = {smyGroup}");
 
             string myName = "Антон";
-            Console.WriteLine("My name is {0}", myName);
+            Console.WriteLine("My name is {0} hkgj", myName);
             Console.WriteLine($"My name is {myName}");
 
             int firstNum = 1;
@@ -79,7 +79,8 @@ namespace LB1
             (name4, age4, city4) = namedTuple;
             (_, int onlyAge, _) = namedTuple;
 
-
+            int[,] mas = new int[2,5];
+            int[][] mas2 = new int[3][];
 
             Console.WriteLine($"Unchecked: {UncheckedFunc()}\n");
            // Console.WriteLine($"Checked: { CheckedFunc()}\n"); ///////

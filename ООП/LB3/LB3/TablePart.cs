@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LB3
 {
-    partial class Table
+    public partial class Table
     {
         public override bool Equals(object obj)
         {

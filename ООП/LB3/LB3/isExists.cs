@@ -25,24 +25,24 @@ namespace LB3
                     case 1:
                         return Array.Exists(col.data, i => i.height == num);
                         //return temp;
-                        break;
+                       
                     case 2:
                         return Array.Exists(col.data, i => i.width == num);
                         //return temp;
-                        break;
+                        
                     case 3:
                         return Array.Exists(col.data, i => i.Depth == num);
                         // return temp;
-                        break;
+                       
                     case 4:
                         return Array.Exists(col.data, i => i.Price == num);
                         //return temp;
-                        break;
+                        
                 }
             }
             else Console.WriteLine("Ошибка ввода");
             //return null;
-            
+            return false;
            
         }
     }

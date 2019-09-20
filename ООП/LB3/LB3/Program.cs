@@ -2,7 +2,7 @@
 
 namespace LB3
 {
-    partial class Table
+    public partial class Table
     {
         public static bool isBroken;
         public static void BreakTheTables()
@@ -114,6 +114,7 @@ namespace LB3
             Console.WriteLine($"Равны ли коллекции col1 и col2: {col1.Equals( col2 )}\nХеш col1: {col1.GetHashCode()}\nХеш col2: {col2.GetHashCode()}");
             col1.Search();
             Console.WriteLine(col1[0].ToString());
+            Console.WriteLine(col1.isExists());
         }
     }
     

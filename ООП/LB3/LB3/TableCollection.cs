@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LB3
 {
-    class TableCollection
+    public class TableCollection
     {
         public Table[] data; //private
 
@@ -52,7 +52,11 @@ namespace LB3
             do
             {
                 Console.WriteLine("Выберите поле для поиска:\n1 - Высота\n2 - Ширина\n3 - Длина\n4 - Цена");
+
+                
                 answer = Convert.ToInt32(Console.ReadLine());
+
+
             } while (!(answer > 0) && (answer < 5));
             Console.WriteLine("Введите значение поля: ");
             string val = Console.ReadLine();

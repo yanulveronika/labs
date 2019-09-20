@@ -5,11 +5,11 @@ namespace LB3
     partial class Table
     {
         public static bool isBroken;
-        public static void BreakTheTable()
+        public static void BreakTheTables()
         {
             isBroken = true;
         }
-        public static void RepareTheTable()
+        public static void RepareTheTables()
         {
             isBroken = false;
         }
@@ -23,14 +23,14 @@ namespace LB3
            if (a > 0) height = a;
            if (b > 0) width = b;
            if (c > 0) depth = c;
-           if (d > 0) price = c;
+           if (d > 0) price = d;
         }
         public Table(int a, int b, int c,int d, string str)
         {
             if (a > 0) height = a;
             if (b > 0) width = b;
             if (c > 0) depth = c;
-            if (d > 0) price = c;
+            if (d > 0) price = d;
             model = str;
         }
         public Table(string str)
@@ -100,10 +100,15 @@ namespace LB3
         static void Main(string[] args)
         {
             Table t1 = new Table(10, 20, 30, 100, "T-1");
-            
+            Table t2 = new Table(30, 20, 10, 80, "T-2");
             TableInfo.GetInfo(t1);
-            var anon = new { height = 10, width = 20, depth = 30, price = 100, model = "T-1" };
-           
+            var anon = new { height = 40, width = 20, depth = 30, price = 300, model = "B-4" };
+
+            TableCollection col1 = new TableCollection();
+            col1.Add(t1);
+            col1.Add(t2);
+            
+           // col1.Search();
         }
     }
     

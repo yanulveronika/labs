@@ -10,7 +10,7 @@ namespace LB3
         {
             if (obj == null)
                 return false;
-            Table tbl = obj as Table; // возвращает null если объект нельзя привести к типу Table
+            Table tbl = obj as Table; // возвращает null, если объект нельзя привести к типу Table
             if (tbl as Table == null)
                 return false;
 

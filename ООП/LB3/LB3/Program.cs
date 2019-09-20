@@ -107,8 +107,13 @@ namespace LB3
             TableCollection col1 = new TableCollection();
             col1.Add(t1);
             col1.Add(t2);
-            
-           // col1.Search();
+            Table[] m1 = new Table[2];
+            m1[0] = t1;
+            m1[1] = t2;
+            TableCollection col2 = new TableCollection(m1);
+            Console.WriteLine($"Равны ли коллекции col1 и col2: {col1.Equals( col2 )}\nХеш col1: {col1.GetHashCode()}\nХеш col2: {col2.GetHashCode()}");
+            col1.Search();
+            Console.WriteLine(col1[0].ToString());
         }
     }
     

@@ -2,12 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace LB3
 {
     class TableCollection
     {
-        Table[] data = new Table[0];
+        public Table[] data; //private
 
+        public TableCollection()
+        {
+            data = new Table[0];
+        }
+        public TableCollection(Table[] data)
+        {
+            this.data = data;
+        }
         public void Add(Table t)
         {            
             Array.Resize(ref data, data.Length+1);
@@ -34,9 +43,7 @@ namespace LB3
         public int Count
         {
             get
-            {
-                return data.Length;
-            }
+            { return data.Length; }
         }
         public void Search()
         {
@@ -86,27 +93,46 @@ namespace LB3
 
         }
 
-        ////public override bool Equals(object obj) /////////
-        ////{
-        ////    if (obj == null)
-        ////        return false;
-        ////    TableCollection t2 = obj as TableCollection;
+        public override bool Equals(object obj) /////////
+        {
+            if (obj == null)
+                return false;
+            TableCollection t2 = obj as TableCollection;
+            if ((t2 == null) || (this.data.Length != t2.data.Length))
+                return false;
+            // return (this.data == t2.data);
+           
+            for (int i = 0; i < t2.data.Length; i++)
+                if (this.data[i] != t2.data[i]) 
+                   return false;
+            return true;
+        }
+        public override int GetHashCode()
+        {
+            int hash = 0;
+            foreach (Table i in data)
+                hash += i.GetHashCode();
 
-        ////}
-        //public override int GetHashCode()
-        //{ }
-        // public override string ToString()
-        //{ }
+            return hash;
+        }
+        public override string ToString()
+        {
+            StringBuilder temp = new StringBuilder("Список элементов\n");
+            foreach (Table i in data)
+            {
+                //temp +=(StringBuilder)($"\n{i.ToString()}\n");
+                temp.Append($"\n{i.ToString()}\n");
+            }
+            string rez = temp.ToString();
+            return rez;
+            
+        }
         public Table this[int index]
         {
             get
-            {
-                return data[index];
-            }
+            { return data[index]; }
             set
-            {
-                data[index] = value;
-            }
+            { data[index] = value; }
         }
     }
 }

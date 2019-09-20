@@ -11,7 +11,7 @@ namespace LB3
             if (obj == null)
                 return false;
             Table tbl = obj as Table; // возвращает null, если объект нельзя привести к типу Table
-            if (tbl as Table == null)
+            if (tbl == null)//
                 return false;
 
             return (this.model == tbl.model) && (this.height == tbl.height) && (this.width == tbl.width) && (this.depth == tbl.depth) && (this.price == tbl.price);
@@ -19,6 +19,7 @@ namespace LB3
 
         public override int GetHashCode()
         {
+           
             int hash = this.depth + this.price + this.width + this.height + this.price;
             foreach (char i in this.model)
             {

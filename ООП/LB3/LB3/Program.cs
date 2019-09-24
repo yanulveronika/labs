@@ -111,10 +111,32 @@ namespace LB3
             m1[0] = t1;
             m1[1] = t2;
             TableCollection col2 = new TableCollection(m1);
-            Console.WriteLine($"Равны ли коллекции col1 и col2: {col1.Equals( col2 )}\nХеш col1: {col1.GetHashCode()}\nХеш col2: {col2.GetHashCode()}");
-            col1.Search();
-            Console.WriteLine(col1[0].ToString());
-            Console.WriteLine(col1.isExists());
+           Console.WriteLine($"Равны ли коллекции col1 и col2: {col1.Equals( col2 )}\nХеш col1: {col1.GetHashCode()}\nХеш col2: {col2.GetHashCode()}");
+
+            Table t3 = new Table(5, 15, 20, 40, "T-3");
+            Table t4 = new Table(35, 25, 20, 40, "T-4");
+            TableCollection col3 = new TableCollection();
+            col3.Add(t3);
+            col3.Add(t1);
+            col3.Add(t2);
+            col3.Add(t1);
+
+            //TableCollection mt1 = col1.Merge(col3);
+            //TableCollection mt2 = col3.Merge(col1);
+            //Console.WriteLine("///\n" + col3.ToString());
+            //Console.WriteLine(mt1.ToString());
+            //Console.WriteLine(mt2.ToString());
+
+            TableCollectionSingleton tcs1;
+            tcs1 = TableCollectionSingleton.GetInstance();
+            tcs1.Add(t3);
+            tcs1.Add(t2);
+            tcs1.Add(t1);
+            Console.WriteLine(TableCollectionSingleton.GetInstance().ToString());
+            TableCollectionSingleton tcs2 = TableCollectionSingleton.GetInstance();
+            tcs2.Delete(0);
+            Console.WriteLine(TableCollectionSingleton.GetInstance().ToString());
+            Console.WriteLine(tcs1.ToString());
         }
     }
     

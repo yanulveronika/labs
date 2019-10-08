@@ -20,7 +20,19 @@ namespace LB5
             Printer p1 = new Printer();
             foreach (IActions i in actionsArr)
                 p1.IAmPrinting(i);
+
+            IActions ref1 = h1 as IActions;
+            Console.WriteLine(h1 is IActions);
+            Console.WriteLine(ref1 is IActions);
+            Console.WriteLine((ref1 != null));
+            Test test1 = new Test();
+            IActions ref2 = test1 as IActions;
+            Console.WriteLine((ref2 != null));
         }
+    }
+    class Test
+    {
+
     }
     class Fighter : IActions
     {

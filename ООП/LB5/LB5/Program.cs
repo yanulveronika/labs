@@ -28,6 +28,7 @@ namespace LB5
             Test test1 = new Test();
             IActions ref2 = test1 as IActions;
             Console.WriteLine((ref2 != null));
+            A a = new A(); B b = new B(); b.m(3, 4);
         }
     }
     class Test

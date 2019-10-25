@@ -62,7 +62,7 @@ namespace LB3
         public int Depth
         {
             get { return depth; }
-            set { if (value > 0) this.depth = value; }
+            set { if (value > 0) depth = value; }
         }
         private int price;
         private string model;
@@ -101,6 +101,7 @@ namespace LB3
         {
             Table t1 = new Table(10, 20, 30, 100, "T-1");
             Table t2 = new Table(30, 20, 10, 80, "T-2");
+            t2.Depth = 3;
             TableInfo.GetInfo(t1);
             var anon = new { height = 40, width = 20, depth = 30, price = 300, model = "B-4" };
 

@@ -28,6 +28,8 @@ namespace LB9
              };
             t1.deleg += () => Console.WriteLine("Лямбда-функция");
             t1.CallDelegate();
+            Console.WriteLine(1 + 1 + "=1+1");
+            Console.WriteLine("1 + 1=" + 1+1);
         }
         
     }
